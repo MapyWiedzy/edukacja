@@ -6,7 +6,14 @@
   <script>
     console.log("Netlify CMS loading...");
     window.CMS_MANUAL_INIT = true;
-    CMS.init().then(() => console.log("CMS initialized")).catch(err => console.error("CMS error:", err));
+    CMS.registerEventListener({
+      name: 'config-loaded',
+      handler: () => console.log('Config loaded')
+    });
+    CMS.init().then(() => console.log("CMS initialized")).catch(err => {
+      console.error("CMS error:", err);
+      console.error("Stack trace:", err.stack);
+    });
   </script>
 </body>
 </html>
