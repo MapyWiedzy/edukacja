@@ -11,10 +11,20 @@
         return;
       }
       window.CMS_MANUAL_INIT = true;
-      CMS.init().then(() => console.log("CMS initialized")).catch(err => {
-        console.error("CMS error:", err);
-        console.error("Stack trace:", err.stack);
-      });
+      try {
+        const result = CMS.init();
+        console.log("CMS init result:", result);
+        if (result && typeof result.then === 'function') {
+          result.then(() => console.log("CMS initialized")).catch(err => {
+            console.error("CMS error:", err);
+            console.error("Stack trace:", err.stack);
+          });
+        } else {
+          console.error("CMS.init did not return a Promise:", result);
+        }
+      } catch (err) {
+        console.error("CMS init failed:", err);
+      }
     });
   </script>
 </body>
