@@ -23,3 +23,9 @@ collections:
       - { label: "Tytuł", name: "title", widget: "string" }
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Treść", name: "body", widget: "markdown" }
+
+backend:
+  name: github
+  repo: MapyWiedzy/edukacja
+  branch: main
+  auth_type: oauth  # Jasno określ typ autoryzacji
