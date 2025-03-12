@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: MapyWiedzy/edukacja  # Poprawna nazwa Twojego repozytorium
+  branch: main
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "home"
+    label: "Strona Główna"
+    files:
+      - file: "content/home/_index.md"
+        label: "Strona Główna"
+        fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - { label: "Data", name: "date", widget: "datetime" }
+          - { label: "Treść", name: "body", widget: "markdown" }
+  - name: "geografia"
+    label: "Geografia"
+    folder: "content/geografia"
+    create: true
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Treść", name: "body", widget: "markdown" }
