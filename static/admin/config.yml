@@ -2,7 +2,10 @@ backend:
   name: github
   repo: MapyWiedzy/edukacja
   branch: main
-  auth_type: oauth  # Jasno określ typ autoryzacji
+  auth_type: oauth
+  base_url: https://api.github.com
+  auth_endpoint: https://github.com/login/oauth/authorize
+  token_endpoint: https://github.com/login/oauth/access_token
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 collections:
@@ -10,7 +13,7 @@ collections:
     label: "Strona Główna"
     files:
       - file: "content/home/_index.md"
-        name: "home_page"  # Dodaj to pole – unikalny identyfikator
+        name: "home_page"
         label: "Strona Główna"
         fields:
           - { label: "Tytuł", name: "title", widget: "string" }
@@ -24,4 +27,3 @@ collections:
       - { label: "Tytuł", name: "title", widget: "string" }
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Treść", name: "body", widget: "markdown" }
-  
