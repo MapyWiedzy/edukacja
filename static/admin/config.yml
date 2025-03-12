@@ -2,10 +2,10 @@ backend:
   name: github
   repo: MapyWiedzy/edukacja
   branch: main
+  client_id: "Ov23lizPm0MynMUdCjjY" # Wstaw poprawny Client ID
+  client_secret: "e80ac06dd04300d963ab5f2023839505b30b7c66" # Wstaw poprawny Client Secret
   auth_type: oauth
-  base_url: https://api.github.com
-  auth_endpoint: https://github.com/login/oauth/authorize
-  token_endpoint: https://github.com/login/oauth/access_token
+  scope: repo # Dodaj scope dla repozytorium
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 collections:
