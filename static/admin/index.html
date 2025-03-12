@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" /><title>Netlify CMS</title></head>
-<body><script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script></body>
+<body>
+  <script src="https://unpkg.com/netlify-cms@^2.10.60/dist/netlify-cms.js" defer></script>
+  <script>
+    console.log("Netlify CMS loading...");
+    window.CMS_MANUAL_INIT = true;
+    CMS.init().then(() => console.log("CMS initialized")).catch(err => console.error("CMS error:", err));
+  </script>
+</body>
 </html>
