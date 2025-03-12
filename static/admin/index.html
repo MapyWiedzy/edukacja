@@ -10,10 +10,10 @@
         console.error("CMS not loaded yet!");
         return;
       }
-      console.log("CMS object:", CMS); // Debug
+      console.log("CMS object:", CMS);
       window.CMS_MANUAL_INIT = true;
       try {
-        console.log("Attempting CMS.init...");
+        console.log("Attempting CMS.init with config from file...");
         const result = CMS.init();
         console.log("CMS init result:", result);
         if (result && typeof result.then === 'function') {
@@ -23,7 +23,7 @@
           });
         } else {
           console.error("CMS.init did not return a Promise:", result);
-          console.log("Backend configuration:", CMS.getBackend('github')); // Debug
+          console.log("Backend configuration:", CMS.getBackend('github'));
         }
       } catch (err) {
         console.error("CMS init failed:", err);
