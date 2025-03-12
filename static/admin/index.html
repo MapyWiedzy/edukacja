@@ -4,7 +4,6 @@
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.10.60/dist/netlify-cms.js"></script>
   <script>
-    // Czekaj na załadowanie CMS
     document.addEventListener('DOMContentLoaded', () => {
       console.log("Netlify CMS loading...");
       if (typeof CMS === 'undefined') {
@@ -12,10 +11,6 @@
         return;
       }
       window.CMS_MANUAL_INIT = true;
-      CMS.registerEventListener({
-        name: 'config-loaded',
-        handler: () => console.log('Config loaded')
-      });
       CMS.init().then(() => console.log("CMS initialized")).catch(err => {
         console.error("CMS error:", err);
         console.error("Stack trace:", err.stack);
